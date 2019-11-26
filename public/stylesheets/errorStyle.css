@@ -1,0 +1,13 @@
+body {
+    background: #ececec;
+  }
+  #error {
+    margin: 0 auto;
+    display: block;
+  }
+
+  h1, h2, pre{
+      text-align: center;
+  }
+
+  
