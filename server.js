@@ -1,8 +1,10 @@
-var createError = require('http-errors');
 var express = require('express');
+var passport = require('passport');
+var createError = require('http-errors');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session')
 // load the env vars
 require('dotenv').config();
 
@@ -12,7 +14,11 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+var session = require('express-session')
+
 require('./config/database');
+require('./config/passport')
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -23,8 +29,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(cookieParser());
+// new code below
+app.use(session({
+  secret: 'SEIRocks!',
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
