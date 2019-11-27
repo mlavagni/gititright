@@ -1,24 +1,70 @@
 var mongoose = require('mongoose');
 
 
-// The factSchema is used to embedded docs in as tudent doc.
-// There is no model and no 'facts' collection
-var factSchema = new mongoose.Schema({
-    text: String
-  }, {
-    timestamps: true
-  });
+let articleSchema = new Schema({
+    name: {
+        type: String,
+    },
+    size: {
+        type: String,
+    },
+    description: {
+        type: String,
+    },
+    brands: {
+        type: []
+    }
 
-var studentSchema = new mongoose.Schema({
+    });
+
+let giftSchema = new Schema({
+    url: {
+        type: String,
+    },
+    sizshoppingCentere: {
+        type: String,
+    },
+    quantity: {
+        type: Number,
+    },
+    description: {
+        type: String,
+    },
+    rate: {
+        type: Number,
+    },
+    isDelivered: {
+        type: Boolean,
+    },
+    shoppingStatus: {
+        type: Boolean,
+    },    
+    
+});
+
+let reminderSchema = new Schema({
+    name: {
+        type: String,
+    },
+    date: {
+        type: Date,
+    },
+    daysBefore: {
+        type: Number,
+    },
+
+});
+
+var userSchema = new mongoose.Schema({
     googleId: String,
     email: String,
     name: String,
     avatar: String,
     lastName: String,
     shippingAddress: String,
-    sizes: [],
-    wishLists:[],
-    reminders:[],
+    sizes: [sizeSchema],
+    wishLists:[giftSchema],
+    reminders:[reminderSchema],
     usersAllow: [],
     isUserActive: Boolean,
     facts: [factSchema],
@@ -28,4 +74,4 @@ var studentSchema = new mongoose.Schema({
   });
 
 
-  module.exports = mongoose.model('Student', studentSchema);
+  module.exports = mongoose.model('User', userSchema, articleSchema,giftSchema,reminderSchema);
