@@ -11,5 +11,6 @@ mongoose.connect(process.env.DATABASE_URL, {
 mongoose.connection.on('connected', function () {
     console.log(`Mongoose connected`);
   });
+
   
   module.exports = mongoose;

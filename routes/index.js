@@ -3,7 +3,7 @@ var passport = require('passport');
 
 // The root route renders our only view
 router.get('/', function(req, res) {
-  res.redirect('/students');
+  res.redirect('/users');
 });
 
  // Google OAuth login route
@@ -16,15 +16,15 @@ router.get('/', function(req, res) {
  router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/students',
-    failureRedirect : '/students'
+    successRedirect : '/users/new',
+    failureRedirect : '/users'
   }
 ));
 
  // OAuth logout route
  router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/students');
+  res.redirect('/users');
 });
 
 module.exports = router;

@@ -1,38 +1,40 @@
-const Student = require('../models/user');
+const User = require('../models/user');
 
 module.exports = {
   index,
-  addFact,
-  delFact
+  new: newUser
 };
 
 function index(req, res, next) {
-  console.log(req.query)
-  // Make the query object to use with Student.find based up
-  // the user has submitted the search form or now
+ 
+  // Make the query object to use with User.find based up
   let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
-  // Default to sorting by name
-//   let sortKey = req.query.sort || 'name';
-  Student.find(modelQuery)
-  .sort(sortKey).exec(function(err, students) {
+
+  //Sorting by name: 
+  let sortKey = req.query.sort || 'name';
+  User.find(modelQuery)
+  .sort(sortKey).exec(function(err, users) {
     if (err) return next(err);
+    console.log(err)
     // Passing search values, name & sortKey, for use in the EJS
-    res.render('students/index', {
-       students,
+    res.render('users/index', {
+       users,
        user: req.user,
-        name: req.query.name,
-         sortKey
-         });
+       name: req.query.name,
+       sortKey
+    });
   });
 }
 
-function addFact(req, res, next) {
-  req.user.facts.push(req.body);
-  req.user.save(function(err) {
-    res.redirect('/students');
-  });
+function newUser (req, res, next){
+ 
+  User.findById(req.session.passport.user).exec(function(err, user) {
+  
+  if (err) return next(err); 
+
+  res.render('users/new', {user});
+  })
 }
 
-function delFact(req, res, next) {
 
-}
+

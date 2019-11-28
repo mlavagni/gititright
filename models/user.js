@@ -1,4 +1,5 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 
 let articleSchema = new Schema({
@@ -55,23 +56,21 @@ let reminderSchema = new Schema({
 
 });
 
-var userSchema = new mongoose.Schema({
+let userSchema = new Schema({
     googleId: String,
     email: String,
     name: String,
     avatar: String,
     lastName: String,
     shippingAddress: String,
-    sizes: [sizeSchema],
+    sizes: [articleSchema],
     wishLists:[giftSchema],
     reminders:[reminderSchema],
     usersAllow: [],
     isUserActive: Boolean,
-    facts: [factSchema],
-    
   }, {
     timestamps: true
   });
 
 
-  module.exports = mongoose.model('User', userSchema, articleSchema,giftSchema,reminderSchema);
+  module.exports = mongoose.model('User', userSchema);
