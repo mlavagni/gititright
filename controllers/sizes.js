@@ -42,6 +42,10 @@ module.exports = {
   }
 
   function create(req, res, next) {
+      console.log('entro al create')
+      console.log("**********")
+      console.log(req.body)
+      console.log("**********")
     User.findById(req.session.passport.user).exec(function(err, user) {
     user.sizes.push(req.body);
     user.save (function(err) {

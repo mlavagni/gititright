@@ -12,7 +12,7 @@ let sizeSchema = new Schema({
         type:String
     },
     brands:{
-    type:[]
+    type:String
     }
 },{
         timestamps: true
