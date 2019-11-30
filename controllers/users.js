@@ -1,9 +1,20 @@
 const User = require('../models/user');
+const Size = require('../models/size')
 
 module.exports = {
   index,
   new: newUser
 };
+
+// function show(req, res) {
+//   // User.findById(req.params.id, function(err, flight) {
+//     User.findById(req.session.passport.user).exec(function(err, user) {
+  
+//       if (err) return next(err); 
+    
+//       res.render('sizes/index', {user});
+//       })
+// }
 
 function index(req, res, next) {
  
