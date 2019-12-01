@@ -42,14 +42,13 @@ let wishListSchema = new Schema({
     },
     shoppingStatus:{
         type:String
-            // type:Object{
-            //     isTaken: Boolean
-            //     who: String
-            // }
-            },
-},{
-        timestamps: true
-      });
+    },
+    whoBuyIt:{
+        type:String
+    },
+}, {
+    timestamps: true
+    });
 
 let reminderSchema = new Schema({
     name: {
@@ -74,7 +73,7 @@ let userSchema = new Schema({
     sizes: [articleSchema],
     wishLists:[wishListSchema],
     reminders:[reminderSchema],
-    usersAllow: [],
+    allowAccess: [],
     isUserActive: Boolean,
   }, {
     timestamps: true
