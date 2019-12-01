@@ -1,10 +1,9 @@
 var router = require('express').Router();
-var sizesCtrl = require('../controllers/sizes');
+var wishListsCtrl = require('../controllers/wishLists');
 
 // GET / articles sizes
-router.get('/sizes',sizesCtrl.index);
-router.post('/users/:id/sizes', sizesCtrl.create);
-router.delete('/sizes/:id' , sizesCtrl.delete)
+router.get('/wishLists',wishListsCtrl.index);
+
 
 function isLoggedIn(req, res, next) {
     if ( req.isAuthenticated() ) return next();
