@@ -3,6 +3,33 @@
 
 
 <h1>sizes </h1>
+<table class="table table-striped table-hover">
+        <thead>
+            <th>Article Name</th>
+            <th>Size</th>
+            <th>Brands</th>
+            <th>Description</th>
+            <th>delete</th>
+        </thead>
+        <tbody>
+            <% user.sizes.forEach(function(article){ %>
+            <tr>
+                <td><%= article.name %></td>
+                <td><%= article.size %></td>
+                <td><%= article.brands %></td>
+                <td><%= article.description %></td>
+                <td>  
+                    <form id="deleteArticle" action="/sizes/<%= article._id %>?_method=DELETE" method="POST" id="deleteArticle">
+                    <button name="deleteArticle" type="submit" class="btnTest">Delete</button>
+                </form>
+            </td>
+            </tr>
+
+
+            <% }) %>
+        </tbody>
+    </table>
+
   
     <div id='itemsContainer' class='sizeContainer'>
             <form class="newSize" id="add-size-form" method="POST" action="/users/<%= user._id %>/sizes">
