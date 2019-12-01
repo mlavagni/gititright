@@ -3,7 +3,8 @@ const Size = require('../models/size')
 
 module.exports = {
   index,
-  new: newUser
+  new: newUser,
+  show
 };
 
 // function show(req, res) {
@@ -44,6 +45,16 @@ function newUser (req, res, next){
   if (err) return next(err); 
 
   res.render('users/new', {user});
+  })
+}
+
+function show (req, res, next){
+ 
+  User.findById(req.session.passport.user).exec(function(err, user) {
+  
+  if (err) return next(err); 
+
+  res.render('users/show', {user});
   })
 }
 

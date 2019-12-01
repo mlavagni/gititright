@@ -3,7 +3,7 @@ var usersCtrl = require('../controllers/users');
 
 // GET /users
 router.get('/users', usersCtrl.index);
-router.get('/users/new',usersCtrl.new);
+router.get('/users/show',usersCtrl.show);
 
 
 

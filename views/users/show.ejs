@@ -1,0 +1,30 @@
+<%- include('../partials/top') %>
+
+<%- include('../partials/left') %>
+
+<h1>Profile Info</h1>
+
+<div id='itemsContainer' class='sizeContainer'>
+        <form class="newSize" id="add-size-form" method="POST" action="/users/<%= user._id %>/sizes">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Name</label>
+            <input type="text" name="name" class="form-control" id="formGroupExampleInput" value="<%=user.name%>">
+        </div>
+        <div class="form-group">
+                <label for="formGroupExampleInput">Last Name</label>
+                <input type="text" name="lastName" class="form-control" id="formGroupExampleInput" value="<%=user.lastName%>">
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Update Profile</button>
+    </form> 
+</div>
+
+</body>
+
+
+
+
+
+
+</body>
+</html>

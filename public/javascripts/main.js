@@ -47,4 +47,6 @@ window.onload = function () {
 	}
   
   onSVGLoaded();
+
+
 };
