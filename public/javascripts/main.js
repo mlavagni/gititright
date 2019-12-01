@@ -49,4 +49,10 @@ window.onload = function () {
   onSVGLoaded();
 
 
+
 };
+
+console.log("test3")
+function myFunction() {
+  console.log("Hello World");
+}

@@ -4,21 +4,25 @@ const Size = require('../models/size')
 module.exports = {
   index,
   new: newUser,
-  show
+  show,
+  update: updateUser
 };
 
-// function show(req, res) {
-//   // User.findById(req.params.id, function(err, flight) {
-//     User.findById(req.session.passport.user).exec(function(err, user) {
-  
-//       if (err) return next(err); 
-    
-//       res.render('sizes/index', {user});
-//       })
-// }
+function updateUser(req, res, next) {
+  console.log('*************')
+  console.log("entro al update")
+  User.findById(req.session.passport.user).exec(function(err, user) {
+      user.name = req.body.name
+      user.lastName = req.body.lastName
+      user.save (function(err) {
+          if (err) return next(err); 
+          res.render('users/show', {user});
+      })
+  })
+}
+
 
 function index(req, res, next) {
- 
   // Make the query object to use with User.find based up
   let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
 

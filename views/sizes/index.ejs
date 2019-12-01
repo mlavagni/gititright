@@ -13,7 +13,7 @@
         </thead>
         <tbody>
             <% user.sizes.forEach(function(article){ %>
-            <tr>
+                <tr onclick="myFunction()">
                 <td><%= article.name %></td>
                 <td><%= article.size %></td>
                 <td><%= article.brands %></td>
@@ -55,4 +55,5 @@
     </div>
     
   </body>
+ 
 </html>

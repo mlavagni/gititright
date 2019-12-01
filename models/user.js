@@ -13,35 +13,43 @@ let articleSchema = new Schema({
         type: String,
     },
     brands: {
-        type: []
+        type: String
     }
 
     });
 
-let giftSchema = new Schema({
+let wishListSchema = new Schema({
+    name:{
+        type: String
+    },
     url: {
         type: String,
     },
-    sizshoppingCentere: {
-        type: String,
+    shoppingCenter:{
+        type:String
     },
-    quantity: {
-        type: Number,
+    quantity:{
+        type:Number
     },
-    description: {
-        type: String,
+    description:{
+        type:String
     },
-    rate: {
-        type: Number,
+    rate:{
+    type:Boolean
     },
-    isDelivered: {
-        type: Boolean,
+    isRecieved:{
+        type:Boolean
     },
-    shoppingStatus: {
-        type: Boolean,
-    },    
-    
-});
+    shoppingStatus:{
+        type:String
+            // type:Object{
+            //     isTaken: Boolean
+            //     who: String
+            // }
+            },
+},{
+        timestamps: true
+      });
 
 let reminderSchema = new Schema({
     name: {
@@ -64,7 +72,7 @@ let userSchema = new Schema({
     lastName: String,
     shippingAddress: String,
     sizes: [articleSchema],
-    wishLists:[giftSchema],
+    wishLists:[wishListSchema],
     reminders:[reminderSchema],
     usersAllow: [],
     isUserActive: Boolean,
