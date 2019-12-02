@@ -4,6 +4,7 @@ var remindersCtrl = require('../controllers/reminders');
 // GET / reminders
 router.get('/reminders',remindersCtrl.index);
 router.post('/users/:id/reminders',remindersCtrl.create);
+router.delete('/reminders/:id',remindersCtrl.delete);
 
 function isLoggedIn(req, res, next) {
     if ( req.isAuthenticated() ) return next();

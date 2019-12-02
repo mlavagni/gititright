@@ -48,11 +48,44 @@ window.onload = function () {
   
   onSVGLoaded();
 
-
-
 };
 
-console.log("test3")
-function myFunction() {
-  console.log("Hello World");
-}
+// const reminderClick = document.getElementById("reminderRow")
+
+// reminderClick.addEventListener('click', function(evt){
+// 	alert(evt.target)
+// 	alert(reminderClick.attributes)
+// });
+const reminderClick = document.querySelectorAll(".reminderRow")
+
+reminderClick.forEach(function (reminder){
+	reminder.addEventListener('click', function(evt){
+		const nameEl = document.getElementById("nameTextBox");
+		nameEl.value = reminder.children[0].textContent
+
+		const dateEl = document.getElementById("dateBox");
+		
+		dateFormat =new Date(reminder.children[1].textContent)
+		
+		dateEl.value = dateFormat.getFullYear().toString() + "-" +
+		(dateFormat.getMonth() + 1).toString().padStart(2, 0) + 
+    '-' + dateFormat.getDate().toString().padStart(2, 0);
+		
+		const daysEl = document.getElementById("daysTextBox");
+		daysEl.value = reminder.children[2].textContent
+		
+		// alert(reminder.children[2].textContent)
+})
+
+})
+
+
+		
+
+
+
+
+
+// function myFunction() {
+//   console.log("Hello World");
+// }

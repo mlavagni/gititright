@@ -12,9 +12,9 @@
             </thead>
             <tbody>
                 <% user.reminders.forEach(function(reminder){ %>
-                    <tr onclick="myFunction()">
+                    <tr class="reminderRow" value="<%reminder._id%>">
                         <td><%= reminder.name %></td>
-                        <td><%= reminder.date %></td>
+                        <td><%= reminder.date.toDateString() %></td>
                         <td><%= reminder.daysBefore %></td>
                         <td>  
                         <form id="deleteReminder" action="/reminders/<%= reminder._id %>?_method=DELETE" method="POST" id="deleteReminder">
@@ -31,15 +31,15 @@
                 <form class="newSize" id="add-size-form" method="POST" action="/users/<%= user._id %>/reminders">
                 <div class="form-group">
                     <label for="formGroupExampleInput">Name</label>
-                    <input type="text" name="name" class="form-control" id="formGroupExampleInput">
+                    <input type="text" name="name" class="form-control" id="nameTextBox">
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput">Date</label>
-                    <input type="datetime-local" name="date"></input>
+                    <input type="date" name="date" id="dateBox"></input>
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput">Days Before Notification</label>
-                    <input type="text" name="daysBefore" class="form-control" id="formGroupExampleInput">
+                    <input type="text" name="daysBefore" class="form-control" id="daysTextBox">
                     </div>
               
                         </div>
