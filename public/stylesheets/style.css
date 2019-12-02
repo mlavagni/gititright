@@ -36,3 +36,25 @@ nav{
   height: 300px;
   margin: 0 auto;
 }
+/* HAVE TO USE DISPLAY:FLEX TO USE JUSTIFY OR ALIGN */
+/* try justify-content/justify-items, align-items/align-content, space-evenly, space-between, if none work, use flex grid */
+
+#leftMenu{
+  display: flex;
+  justify-content: left;
+  width: 20%;
+  height: 100%;
+  background-color: red;
+}
+#content{
+  margin: 0;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  width: 80%;
+  height: 100%;
+  background-color: blue;
+}
+ul{
+  list-style-type: none
+}

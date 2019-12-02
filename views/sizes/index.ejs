@@ -13,7 +13,7 @@
         </thead>
         <tbody>
             <% user.sizes.forEach(function(article){ %>
-                <tr onclick="myFunction()">
+                <tr class="sizeRow" value="<%= article._id %>">
                 <td><%= article.name %></td>
                 <td><%= article.size %></td>
                 <td><%= article.brands %></td>
@@ -35,19 +35,20 @@
             <form class="newSize" id="add-size-form" method="POST" action="/users/<%= user._id %>/sizes">
             <div class="form-group">
                 <label for="formGroupExampleInput">Article</label>
-                <input type="text" name="name" class="form-control" id="formGroupExampleInput" placeholder="Jeans">
+                <input type="text" name="name" class="form-control" id="nameSize" placeholder="Jeans">
+                <input type="hidden" name="_id" class="form-control" id="idSize">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">Size</label>
-                <input type="text" name="size" class="form-control" id="formGroupExampleInput" placeholder="L">
+                <input type="text" name="size" class="form-control" id="sizeSize" placeholder="L">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">Brands</label>
-                <input type="text" name="brands" class="form-control" id="formGroupExampleInput" placeholder="Lee">
+                <input type="text" name="brands" class="form-control" id="brandSize" placeholder="Lee">
                 </div>
             <div class="form-group">
                 <label for="formGroupExampleInput" >Description</label>
-                <input type="text" name="description" class="form-control" id="formGroupExampleInput" placeholder="I like black jeans....">
+                <input type="text" name="description" class="form-control" id="descriptionSize" placeholder="I like black jeans....">
                 </div>
            
             <button type="submit" class="btn btn-primary">Add Article</button>

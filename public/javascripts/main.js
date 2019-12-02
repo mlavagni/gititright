@@ -57,9 +57,15 @@ window.onload = function () {
 // 	alert(reminderClick.attributes)
 // });
 const reminderClick = document.querySelectorAll(".reminderRow")
+const sizeClick = document.querySelectorAll(".sizeRow")
+
 
 reminderClick.forEach(function (reminder){
 	reminder.addEventListener('click', function(evt){
+
+		const idEl = document.getElementById("idTextBox");
+		idEl.value = reminder.attributes.value.value
+
 		const nameEl = document.getElementById("nameTextBox");
 		nameEl.value = reminder.children[0].textContent
 
@@ -73,12 +79,32 @@ reminderClick.forEach(function (reminder){
 		
 		const daysEl = document.getElementById("daysTextBox");
 		daysEl.value = reminder.children[2].textContent
+
+})
+
+})
+
+sizeClick.forEach(function (size){
+	size.addEventListener('click', function(evt){
+
+		const idEl = document.getElementById("idSize");
+		idEl.value = size.attributes.value.value
+
+		const nameEl = document.getElementById("nameSize");
+		nameEl.value = size.children[0].textContent
+
+		const sizeEl = document.getElementById("sizeSize");
+		sizeEl.value = size.children[1].textContent
+
+		const brandEl = document.getElementById("brandSize");
+		brandEl.value = size.children[2].textContent
 		
-		// alert(reminder.children[2].textContent)
-})
+		const descriptionEl = document.getElementById("descriptionSize");
+		descriptionEl.value = size.children[3].textContent
 
 })
 
+})
 
 		
 
