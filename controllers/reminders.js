@@ -52,6 +52,11 @@ res.redirect(`/reminders`);
  }
 
  function create(req, res, next) {
+    for(let key in req.body){
+        if (req.body[key]=== '') {
+          delete req.body[key];
+        }
+    }
      User.findById(req.session.passport.user).exec(function(err, user) {
      user.reminders.push(req.body);
      user.save (function(err) {

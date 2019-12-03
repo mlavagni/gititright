@@ -35,6 +35,11 @@ function show(req, res) {
 }
 
 function create(req, res, next) {
+    for(let key in req.body){
+        if (req.body[key]=== '') {
+          delete req.body[key];
+        }
+    }
     User.findById(req.session.passport.user).exec(function(err, user) {
         user.sizes.push(req.body);
         user.save (function(err) {
