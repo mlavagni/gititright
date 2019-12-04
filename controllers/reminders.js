@@ -9,36 +9,27 @@ module.exports = {
   
 
   function updateReminder(req, res, next) {
-    console.log('*************')
-    console.log("entro al update")
-    console.log(req.body)
-     User.findById(req.session.passport.user).exec(function(err, user) {
-
-    //     user.name = req.body.name
-    //     user.lastName = req.body.lastName
-    //     user.save (function(err) {
-    //         if (err) return next(err); 
-    //         res.render('users/show', {user});
-    //     })
-    // })
-//   }
-//     User.reminder.findOneAndUdate(
-//     { "_id": req.session.passport.user, "reminder._id": req.params.id },
-//     {
-//         "$set": {
-//             "name": filedata.name,
-//             "date": filedata.size,
-//             "daysBefore": filedata.type
-//         }
-//     },
-//     function(err,user) {
-
-
-//     }
-// );
-res.redirect(`/reminders`);
-     })
+    User.findById(req.session.passport.user, function(err, user) {
+     
+         for (var i=0;i < user.reminders.length; i++) {
+            if (user.reminders[i]._id == req.body._id) {
+                console.log('winner')
+                user.reminders[i].name = req.body.name
+                user.reminders[i].date = req.body.date
+                user.reminders[i].daysBefore = req.body.daysBefore
+                break; //Stop this loop, we found it!
+            }
+         }
+        user.save (function(err) {
+            if (err) return next(err)
+            res.redirect(`/reminders`)
+        })
+    })
+     
   }
+
+
+
 
  function deleteReminder(req, res, next) {
  User.findById(req.session.passport.user, function(err, user) {
@@ -57,6 +48,7 @@ res.redirect(`/reminders`);
           delete req.body[key];
         }
     }
+    console.log(req.body)
      User.findById(req.session.passport.user).exec(function(err, user) {
      user.reminders.push(req.body);
      user.save (function(err) {

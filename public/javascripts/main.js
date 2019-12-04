@@ -50,12 +50,7 @@ window.onload = function () {
 
 };
 
-// const reminderClick = document.getElementById("reminderRow")
 
-// reminderClick.addEventListener('click', function(evt){
-// 	alert(evt.target)
-// 	alert(reminderClick.attributes)
-// });
 const reminderClick = document.querySelectorAll(".reminderRow")
 const sizeClick = document.querySelectorAll(".sizeRow")
 
@@ -80,6 +75,10 @@ reminderClick.forEach(function (reminder){
 		const daysEl = document.getElementById("daysTextBox");
 		daysEl.value = reminder.children[2].textContent
 
+		//change the form action to PUT
+		document.getElementById("form-save-update").action =`/reminders/${ reminder.attributes.value.value }?_method=PUT`;
+
+	
 })
 
 })
@@ -111,7 +110,3 @@ sizeClick.forEach(function (size){
 
 
 
-
-// function myFunction() {
-//   console.log("Hello World");
-// }

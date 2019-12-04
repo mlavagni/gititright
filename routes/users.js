@@ -4,7 +4,7 @@ var usersCtrl = require('../controllers/users');
 // GET /users
 router.get('/users', usersCtrl.index);
 router.get('/users/show',usersCtrl.show);
-router.post('/users/:id',usersCtrl.update);
+router.put('/users/:id',usersCtrl.update);
 
 
 function isLoggedIn(req, res, next) {

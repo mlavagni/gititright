@@ -1,19 +1,20 @@
 <%- include('../partials/top') %>
 
+<%- include('../partials/left') %>
 
 <div class="content">
-    <%- include('../partials/left') %>
+   
     <h2>reminders</h2>
     <div class="info">
         <div class="tableInfo">
-        <table class="table table-striped table-hover">
-            <thead>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Days to Remaind</th>
-                <th>delete</th>
-            </thead>
-            <tbody>
+            <table class="table table-hover">
+                <thead>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Days to Remaind</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
                 <% user.reminders.forEach(function(reminder){ %>
                 <tr class="reminderRow" value="<%= reminder._id %>">
                     <td><%= reminder.name %></td>
@@ -25,13 +26,13 @@
                     </form>
                     </td>
                 </tr>
-            <% }) %>
-        </tbody>
-    </table>
-</div>
-</section>
+                <% }) %>
+                </tbody>
+            </table>
+        </div>
+
         <div id='itemsContainer' class='sizeContainer'>
-                <form class="newSize" id="add-size-form" method="POST" action="/users/<%= user._id %>/reminders">
+                <form id="form-save-update" class="newSize" id="add-size-form" method="POST" action="/users/<%= user._id %>/reminders">
                 <div class="form-group">
                     <label for="formGroupExampleInput">Name</label>
                     <input type="text" name="name" class="form-control" id="nameTextBox">
@@ -47,7 +48,7 @@
                     </div>
               
                         </div>
-                              
+                        <button type="submit" class="btn btn-primary">update Reminder</button>
                         <button type="submit" class="btn btn-primary">Add Reminder</button>
             </form> 
         </div>
