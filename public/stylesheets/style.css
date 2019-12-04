@@ -144,4 +144,8 @@ tbody tr:nth-child(odd) {
 }
 
 
-
+.textbox-Imput{
+  width: 290px;
+  height: 40px;
+  border-radius: 10px;
+}

@@ -33,26 +33,23 @@
             </table>
         </div>
   
-    <div id='itemsContainer' class='sizeContainer'>
-            <form class="newSize" id="add-size-form" method="POST" action="/users/<%= user._id %>/sizes">
+    <div id='itemsContainer'>
+        <form class="newSize" id="add-size-form" method="POST" action="/users/<%= user._id %>/sizes">
             <div class="form-group">
-                <label for="formGroupExampleInput">Article</label>
-                <input type="text" name="name" class="form-control" id="nameSize" placeholder="Jeans">
+                <input type="text" name="name" class="textbox-Imput" id="nameSize" placeholder="Add your article">
                 <input type="hidden" name="_id" class="form-control" id="idSize">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput">Size</label>
-                <input type="text" name="size" class="form-control" id="sizeSize" placeholder="L">
+                <input type="text" name="size" class="textbox-Imput" id="sizeSize" placeholder="Add your Size">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput">Brands</label>
-                <input type="text" name="brands" class="form-control" id="brandSize" placeholder="Lee">
+                <input type="text" name="brands" class="textbox-Imput" id="brandSize" placeholder="Add Brands">
                 </div>
             <div class="form-group">
-                <label for="formGroupExampleInput" >Description</label>
-                <input type="text" name="description" class="form-control" id="descriptionSize" placeholder="I like black jeans....">
-                </div>
-           
+                <input type="text" name="description" class="textbox-Imput" id="descriptionSize" placeholder="Add a description">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Update Article</button>
             <button type="submit" class="btn btn-primary">Add Article</button>
         </form> 
     </div>
