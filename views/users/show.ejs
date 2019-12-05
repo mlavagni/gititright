@@ -1,10 +1,14 @@
 <%- include('../partials/top') %>
 
-<%- include('../partials/left') %>
 
-<h1>Profile Info</h1>
 
-<div id='itemsContainer' class='sizeContainer'>
+
+
+<div class="content">
+        <%- include('../partials/left') %>
+
+        <div class="tableInfo profile-info">
+                <h1>Profile Info</h1>
         <form id="updateUser" action="/users/<%= user._id %>?_method=PUT" method="POST" id="updateUser">    
         <div class="form-group">
             <label for="formGroupExampleInput">Name</label>
@@ -17,6 +21,7 @@
        
         <button type="submit" class="btn btn-primary">Update Profile</button>
     </form> 
+    </div>
 </div>
 
 </body>

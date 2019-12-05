@@ -1,12 +1,11 @@
 <%- include('../partials/top') %>
 
-<%- include('../partials/left') %>
-
 <div class="content">
-   
-    <h2>reminders</h2>
+    <%- include('../partials/left') %>
+
     <div class="info">
         <div class="tableInfo">
+                <h2>Reminders</h2>
             <table class="table table-hover">
                 <thead>
                     <th>Name</th>
@@ -31,7 +30,8 @@
             </table>
         </div>
 
-        <div id='itemsContainer' class='sizeContainer'>
+        <div id='itemsContainer'>
+                <div id="test">
                 <form id="form-save-update" class="newSize" id="add-size-form" method="POST" action="/users/<%= user._id %>/reminders">
                 <div class="form-group">
                     <label for="formGroupExampleInput">Name</label>
@@ -51,6 +51,7 @@
                         <button type="submit" class="btn btn-primary">update Reminder</button>
                         <button type="submit" class="btn btn-primary">Add Reminder</button>
             </form> 
+            </div>
         </div>
    
         

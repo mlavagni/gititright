@@ -6,7 +6,7 @@
     
     <div class="info">
         <div class="tableInfo">
-                <h2>sizes </h2>
+                <h2>Sizes </h2>
             <table class="table table-hover">
                 <thead>
                     <th>Article Name</th>
@@ -34,24 +34,27 @@
         </div>
   
     <div id='itemsContainer'>
+            <div id="test">
         <form class="newSize" id="add-size-form" method="POST" action="/users/<%= user._id %>/sizes">
-            <div class="form-group">
-                <input type="text" name="name" class="textbox-Imput" id="nameSize" placeholder="Add your article">
+           
+            <div class="form-group" id="first-textbox">
+                <input type="text" name="name" class="textbox-imput-normal" id="nameSize" placeholder="Add your article">
                 <input type="hidden" name="_id" class="form-control" id="idSize">
             </div>
-            <div class="form-group">
-                <input type="text" name="size" class="textbox-Imput" id="sizeSize" placeholder="Add your Size">
+            <div class="form-group" id ="second-textbox">
+                <input type="text" name="size" class="textbox-imput-small" id="sizeSize" placeholder="Add Size">
             </div>
-            <div class="form-group">
-                <input type="text" name="brands" class="textbox-Imput" id="brandSize" placeholder="Add Brands">
+            <div class="form-group" id ="third-textbox">
+                <input type="text" name="brands" class="textbox-imput-large" id="brandSize" placeholder="Add Brands">
                 </div>
-            <div class="form-group">
-                <input type="text" name="description" class="textbox-Imput" id="descriptionSize" placeholder="Add a description">
+            <div class="form-group" id ="fouth-textbox">
+                <textarea type="text" name="description" class="textbox-imput-xlarge" id="descriptionSize" placeholder="Add a description"></textarea>
             </div>
             
             <button type="submit" class="btn btn-primary">Update Article</button>
             <button type="submit" class="btn btn-primary">Add Article</button>
         </form> 
+        </div>
     </div>
 
 

@@ -13,8 +13,9 @@ module.exports = {
      
          for (var i=0;i < user.reminders.length; i++) {
             if (user.reminders[i]._id == req.body._id) {
-                console.log('winner')
                 user.reminders[i].name = req.body.name
+                let dateRemainder = req.body.date
+
                 user.reminders[i].date = req.body.date
                 user.reminders[i].daysBefore = req.body.daysBefore
                 break; //Stop this loop, we found it!

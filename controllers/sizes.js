@@ -5,8 +5,31 @@ module.exports = {
     create,
     show,
     index,
-    delete: deleteSize
+    delete: deleteSize,
+    update: updateSize
   };
+
+  function updateSize(req, res, next) {
+    User.findById(req.session.passport.user, function(err, user) {
+     
+         for (var i=0;i < user.sizes.length; i++) {
+            if (user.reminders[i]._id == req.body._id) {
+                user.reminders[i].name = req.body.name
+                user.reminders[i].size = req.body.size
+                user.reminders[i].brands = req.body.brands
+                user.reminders[i].description = req.body.description
+                
+                break; //Stop this loop, we found it!
+            }
+         }
+        user.save (function(err) {
+            if (err) return next(err)
+            res.redirect(`/sizes`)
+        })
+    })
+     
+  }
+
 
 function deleteSize(req, res, next) {
     User.findById(req.session.passport.user, function(err, user) {

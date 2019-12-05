@@ -101,6 +101,9 @@ sizeClick.forEach(function (size){
 		const descriptionEl = document.getElementById("descriptionSize");
 		descriptionEl.value = size.children[3].textContent
 
+				//change the form action to PUT
+				document.getElementById("form-save-update").action =`/reminders/${ size.attributes.value.value }?_method=PUT`;
+
 })
 
 })
