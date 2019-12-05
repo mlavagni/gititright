@@ -34,9 +34,9 @@
         </div>
   
     <div id='itemsContainer'>
-            <div id="test">
-        <form class="newSize" id="add-size-form" method="POST" action="/users/<%= user._id %>/sizes">
            
+        <form class="newSize" id="add-size-form" method="POST" action="/users/<%= user._id %>/sizes">
+            <div id="test">
             <div class="form-group" id="first-textbox">
                 <input type="text" name="name" class="textbox-imput-normal" id="nameSize" placeholder="Add your article">
                 <input type="hidden" name="_id" class="form-control" id="idSize">
@@ -51,10 +51,11 @@
                 <textarea type="text" name="description" class="textbox-imput-xlarge" id="descriptionSize" placeholder="Add a description"></textarea>
             </div>
             
-            <button type="submit" class="btn btn-primary">Update Article</button>
-            <button type="submit" class="btn btn-primary">Add Article</button>
-        </form> 
+            <button type="submit" class="btn btn-primary" id="bt1">Update Article</button>
+            <button type="submit" class="btn btn-primary" id="bt2">Add Article</button>
         </div>
+        </form> 
+        
     </div>
 
 

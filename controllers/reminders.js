@@ -33,7 +33,7 @@ module.exports = {
 
 
  function deleteReminder(req, res, next) {
- User.findById(req.session.passport.user, function(err, user) {
+ User.findById(req.user, function(err, user) {
     // Removing document from the embedded schema
     user.reminders.id(req.params.id).remove();
     user.save(function (err) {
