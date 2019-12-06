@@ -13,19 +13,14 @@ function create(req, res, next) {
       }
   }
  
-  console.log("**********")
-  console.log('we are in create - prams id')
-  console.log(req.params._id)
-  console.log("**********")
+
   User.findById(req.user).exec(function(err, user) {
-    console.log("**********")
-    console.log('we are in create - find by id')
-    console.log(req.user)
-    console.log("**********")
-      user.allowAccess.push(req.params._id);
+   
+      user.allowAccess.push(req.params.id);
       user.save (function(err) {
           if (err) return next(err); 
-          res.render('/allowAccess', {user});
+          console.log(user)
+          res.render('/allowAccess/index', {user});
       })
   })
 }

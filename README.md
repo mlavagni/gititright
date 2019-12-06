@@ -15,25 +15,25 @@ The purpose of the app is to have information on your friends and families, what
 9- As a user I want to be able to log out
 
 # ERD
-(/images/readme-imgs/erd.png)
+![ERD](public/images/readme-imgs/erd.png)
 
 # Wire frames
 
  - Home Page
  
- ![home](/images/wireframes/home.png)
+ ![Home](public/images/readme-imgs/wireframes/home.png)
 
  - Profile
  
- ![profile](/images/wireframes/profile.png)
+ ![Profile](public/images/readme-imgs/wireframes/profile.png)
 
   - Sizes
   
- ![sizes](/images/wireframes/sizes.png)
+ ![Sizes](public/images/readme-imgs/wireframes/sizes.png)
 
   - Reminders
   
- ![reminders](/images/wireframes/reminders.png)
+ ![Reminders](public/images/readme-imgs/wireframes/reminders.png)
 
 
 

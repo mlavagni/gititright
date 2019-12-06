@@ -13,7 +13,7 @@
                     </thead>
                     <tbody>
                         <% users.forEach(function(userAccess){ %>
-                        <% if (user.allowAccess > 0) { %>
+                        <% if (user.allowAccess.lenght > 0) { %>
                         <% user.allowAccess.forEach(function(aAccess){ %>
                         <% if (aAccess._id == userAccess._id) { %>
                             <tr class="sizeRow" value="<%= user._id %>">
@@ -57,7 +57,7 @@
                             <td>  
                             <form id="allowAccess" action="/users/<%= user._id %>/allowAccess" method="POST" id="allowAccess">
                                 <button name="allowAccess" type="submit" class="btnAllowAccess">Allow Access</button>
-                                </form>
+                            </form>
                             </td>
                         </tr>
                         <% }) %>
