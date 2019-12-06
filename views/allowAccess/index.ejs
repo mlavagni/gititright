@@ -1,8 +1,9 @@
 <%- include('../partials/top') %>
 
+<div class="content">
 
-<div class="info">
-   
+        <%- include('../partials/left') %>
+        <div class="info">
         <div class="tableInfo">
                 <h2>Allowed Users </h2>
                 <table class="table table-hover">
@@ -12,18 +13,19 @@
                         <th>Delete</th>
                     </thead>
                     <tbody>
+                        
                         <% users.forEach(function(userAccess){ %>
                         <% if (user.allowAccess.lenght > 0) { %>
                         <% user.allowAccess.forEach(function(aAccess){ %>
-                        <% if (aAccess._id == userAccess._id) { %>
+                        <% if (aAccess == userAccess._id) { %>
                             <tr class="sizeRow" value="<%= user._id %>">
                                 <td><%= userAccess.name %></td>
                    
                             <td>  
-                            <form id="deleteUser" action="/allowAccess/<%= user._id %>?_method=DELETE" method="POST" id="deleteUser">
-                            <button name="deleteUser" type="submit" class="btnDeleteUser">Delete</button>
-                            </form>
-                        </td>
+                                <form id="deleteUser" action="/allowAccess/<%= user._id %>?_method=DELETE" method="POST" id="deleteUser">
+                                <button name="deleteUser" type="submit" class="btnDeleteUser">Delete</button>
+                                </form>
+                            </td>
                     </tr>
                     <% } %>
                    
