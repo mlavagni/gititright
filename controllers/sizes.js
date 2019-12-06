@@ -13,11 +13,11 @@ module.exports = {
     User.findById(req.user, function(err, user) {
      
          for (var i=0;i < user.sizes.length; i++) {
-            if (user.reminders[i]._id == req.body._id) {
-                user.reminders[i].name = req.body.name
-                user.reminders[i].size = req.body.size
-                user.reminders[i].brands = req.body.brands
-                user.reminders[i].description = req.body.description
+            if (user.sizes[i]._id == req.body._id) {
+                user.sizes[i].name = req.body.name
+                user.sizes[i].size = req.body.size
+                user.sizes[i].brands = req.body.brands
+                user.sizes[i].description = req.body.description
                 
                 break; //Stop this loop, we found it!
             }

@@ -35,24 +35,24 @@
   
     <div id='itemsContainer'>
            
-        <form class="newSize" id="add-size-form" method="POST" action="/users/<%= user._id %>/sizes">
+        <form id="form-save-update"class="newSize" id="add-size-form" method="POST" action="/users/<%= user._id %>/sizes">
             <div id="test">
             <div class="form-group" id="first-textbox">
-                <input type="text" name="name" class="textbox-imput-normal" id="nameSize" placeholder="Add your article">
+                <input type="text" name="name" class="textbox-imput-normal" id="nameSize" placeholder="Add your article" autocomplete="off">
                 <input type="hidden" name="_id" class="form-control" id="idSize">
             </div>
             <div class="form-group" id ="second-textbox">
-                <input type="text" name="size" class="textbox-imput-small" id="sizeSize" placeholder="Add Size">
+                <input type="text" name="size" class="textbox-imput-small" id="sizeSize" placeholder="Add Size" autocomplete="off">
             </div>
             <div class="form-group" id ="third-textbox">
-                <input type="text" name="brands" class="textbox-imput-large" id="brandSize" placeholder="Add Brands">
+                <input type="text" name="brands" class="textbox-imput-large" id="brandSize" placeholder="Add Brands" autocomplete="off">
                 </div>
             <div class="form-group" id ="fouth-textbox">
                 <textarea type="text" name="description" class="textbox-imput-xlarge" id="descriptionSize" placeholder="Add a description"></textarea>
             </div>
-            
-            <button type="submit" class="btn btn-primary" id="bt1">Update Article</button>
+  
             <button type="submit" class="btn btn-primary" id="bt2">Add Article</button>
+            <button type="submit" class="btn btn-primary" id="bt1">Update Article</button>
         </div>
         </form> 
         

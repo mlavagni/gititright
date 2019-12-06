@@ -20,7 +20,7 @@ function create(req, res, next) {
       user.save (function(err) {
           if (err) return next(err); 
           console.log(user)
-          res.render('/allowAccess/index', {user});
+          res.redirect('/allowAccess'); 
       })
   })
 }
@@ -37,6 +37,8 @@ function index(req, res, next) {
       if (err) return next(err);
       console.log(err)
       // Passing search values, name & sortKey, for use in the EJS
+      // console.log(users)
+
       res.render('allowAccess/index', {
         
          users,

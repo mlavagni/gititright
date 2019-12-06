@@ -86,23 +86,23 @@ reminderClick.forEach(function (reminder){
 sizeClick.forEach(function (size){
 	size.addEventListener('click', function(evt){
 
-		const idEl = document.getElementById("idSize");
-		idEl.value = size.attributes.value.value
+		const sidEl = document.getElementById("idSize");
+		sidEl.value = size.attributes.value.value
 
-		const nameEl = document.getElementById("nameSize");
-		nameEl.value = size.children[0].textContent
+		const snameEl = document.getElementById("nameSize");
+		snameEl.value = size.children[0].textContent
 
-		const sizeEl = document.getElementById("sizeSize");
-		sizeEl.value = size.children[1].textContent
+		const ssizeEl = document.getElementById("sizeSize");
+		ssizeEl.value = size.children[1].textContent
 
-		const brandEl = document.getElementById("brandSize");
-		brandEl.value = size.children[2].textContent
+		const sbrandEl = document.getElementById("brandSize");
+		sbrandEl.value = size.children[2].textContent
 		
-		const descriptionEl = document.getElementById("descriptionSize");
-		descriptionEl.value = size.children[3].textContent
+		const sdescriptionEl = document.getElementById("descriptionSize");
+		sdescriptionEl.value = size.children[3].textContent
 
-				//change the form action to PUT
-				document.getElementById("form-save-update").action =`/reminders/${ size.attributes.value.value }?_method=PUT`;
+		//change the form action to PUT
+		document.getElementById("form-save-update").action =`/sizes/${ size.attributes.value.value }?_method=PUT`;
 
 })
 

@@ -13,25 +13,25 @@
                         <th>Delete</th>
                     </thead>
                     <tbody>
-                        
+                     
                         <% users.forEach(function(userAccess){ %>
-                        <% if (user.allowAccess.lenght > 0) { %>
-                        <% user.allowAccess.forEach(function(aAccess){ %>
-                        <% if (aAccess == userAccess._id) { %>
-                            <tr class="sizeRow" value="<%= user._id %>">
-                                <td><%= userAccess.name %></td>
+                  
+                            <% if (user.allowAccess.lenght > 0) { %>
+                                <% user.allowAccess.forEach(function(aAccess){ %>
+                                    <% if (aAccess == userAccess._id) { %>
+                                        <tr class="sizeRow" value="<%= user._id %>">
+                                            <td><%= userAccess.name %></td>
+                                            <td>  
+                                                <form id="deleteUser" action="/allowAccess/<%= user._id %>?_method=DELETE" method="POST" id="deleteUser">
+                                                <button name="deleteUser" type="submit" class="btnDeleteUser">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <% } %>
                    
-                            <td>  
-                                <form id="deleteUser" action="/allowAccess/<%= user._id %>?_method=DELETE" method="POST" id="deleteUser">
-                                <button name="deleteUser" type="submit" class="btnDeleteUser">Delete</button>
-                                </form>
-                            </td>
-                    </tr>
-                    <% } %>
-                   
-                    <%}) %>
-                    <% } %>
-                    <% }) %>
+                                <%}) %>
+                            <% } %>
+                        <% }) %>
                     </tbody>
                 </table>
             </div>
@@ -40,7 +40,7 @@
         
         
         
-            <form action="/allowAccess" method="GET">
+            
                 <div class="col s3 offset-s3">
                   <!-- search -->
                   <div class="input-field">
