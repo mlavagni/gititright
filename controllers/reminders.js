@@ -9,7 +9,7 @@ module.exports = {
   
 
   function updateReminder(req, res, next) {
-    User.findById(req.session.passport.user, function(err, user) {
+    User.findById(req.user, function(err, user) {
      
          for (var i=0;i < user.reminders.length; i++) {
             if (user.reminders[i]._id == req.body._id) {
@@ -50,7 +50,7 @@ module.exports = {
         }
     }
     console.log(req.body)
-     User.findById(req.session.passport.user).exec(function(err, user) {
+     User.findById(req.user).exec(function(err, user) {
      user.reminders.push(req.body);
      user.save (function(err) {
         if (err) return next(err); 
@@ -60,7 +60,7 @@ module.exports = {
  }
 
 function index(req, res, next) {
-User.findById(req.session.passport.user).exec(function(err, user) {
+User.findById(req.user).exec(function(err, user) {
 if (err) return next(err); 
     res.render('reminders/index', {user});
 })

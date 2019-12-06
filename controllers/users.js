@@ -9,9 +9,7 @@ module.exports = {
 };
 
 function updateUser(req, res, next) {
-  console.log('*************')
-  console.log("entro al update")
-  User.findById(req.session.passport.user).exec(function(err, user) {
+  User.findById(req.user).exec(function(err, user) {
       user.name = req.body.name
       user.lastName = req.body.lastName
       user.save (function(err) {
@@ -44,7 +42,7 @@ function index(req, res, next) {
 
 function newUser (req, res, next){
  
-  User.findById(req.session.passport.user).exec(function(err, user) {
+  User.findById(req.user).exec(function(err, user) {
   
   if (err) return next(err); 
 

@@ -14,26 +14,38 @@ The purpose of the app is to have information on your friends and families, what
 8- As a user I would like to let others users know if I buy something from there wishlist
 9- As a user I want to be able to log out
 
+# ERD
+(/images/readme-imgs/erd.png)
 
 # Wire frames
 
  - Home Page
  
- ![Home](/assets/wireframes/Home-Page1.png)
+ ![home](/images/wireframes/home.png)
 
- - Play
+ - Profile
  
- ![Play](/assets/wireframes/Play.png)
+ ![profile](/images/wireframes/profile.png)
 
-  - Make your move
+  - Sizes
   
- ![Make your move](/assets/wireframes/Make-Your-Move1.png)
+ ![sizes](/images/wireframes/sizes.png)
+
+  - Reminders
+  
+ ![reminders](/images/wireframes/reminders.png)
 
 
 
 # Tech
  - HTML 
  - CSS 
+ - Boostrap
  - JavaScript 
  - NODE 
  - MongoDB
+
+ # Next Steps
+ - Need to implememt wishList
+ - Need to implement send a reminding notification
+ - Nedd to implement allow access to others accounts

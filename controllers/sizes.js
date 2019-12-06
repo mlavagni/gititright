@@ -10,7 +10,7 @@ module.exports = {
   };
 
   function updateSize(req, res, next) {
-    User.findById(req.session.passport.user, function(err, user) {
+    User.findById(req.user, function(err, user) {
      
          for (var i=0;i < user.sizes.length; i++) {
             if (user.reminders[i]._id == req.body._id) {
@@ -44,7 +44,7 @@ function deleteSize(req, res, next) {
 
 function index(req, res, next) {
 
-    User.findById(req.session.passport.user).exec(function(err, user) {
+    User.findById(req.user).exec(function(err, user) {
     if (err) return next(err); 
         res.render('sizes/index', {user});
     })

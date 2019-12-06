@@ -15,7 +15,7 @@ var usersRouter = require('./routes/users');
 var sizesRouter = require('./routes/sizes');
 var wishListsRouter = require('./routes/wishLists');
 var remindersRouter = require('./routes/reminders');
-// var allowUsersRouter = require('./routes/allow-users');
+var allowAccessRouter = require('./routes/allowAccess');
 
 var app = express();
 
@@ -50,7 +50,7 @@ app.use('/', usersRouter);
 app.use('/', sizesRouter);
 app.use('/', wishListsRouter);
 app.use('/', remindersRouter);
-// app.use('/', allowUsersRouter);
+app.use('/', allowAccessRouter);
 
 
 // catch 404 and forward to error handler

@@ -15,7 +15,9 @@ body {
 a {
   color: #006E7C;
 }
-
+h1{
+  font-size: 2rem;
+}
 h1, h2{
   font-family: 'Gloria Hallelujah', cursive;
   text-align: center;
@@ -95,6 +97,7 @@ h2{
   text-align: left;
   width: 250px;
   height: 460px;
+
 }
 .tableInfo{
   box-shadow: 3px 3px 5px 6px #ccc; 
@@ -115,6 +118,9 @@ h2{
   background: #2980B9;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.nav-icon{
+  align-items: center;
 }
 
 table {
