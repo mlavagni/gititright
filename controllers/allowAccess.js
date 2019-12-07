@@ -2,9 +2,27 @@ const User = require('../models/user');
 
 module.exports = {
   index,
-  create
-
+  create,
+  delete: removeAccess
 };
+
+function removeAccess(req, res, next) {
+  
+  User.findById(req.user, function(err, user) {
+
+     // Removing document from the embedded schema  
+      let index = user.allowAccess.indexOf(req.params.id);
+      if (index > -1) {
+        user.allowAccess.splice(index, 1);
+        }
+    
+     user.save(function (err) {
+         if (err) return next(err);
+         res.redirect(`/allowAccess`);
+         });
+     })
+  }
+
 
 function create(req, res, next) {
   for(let key in req.body){

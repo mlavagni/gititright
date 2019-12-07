@@ -23,8 +23,8 @@
                                             <td><%= userAccess.name %></td>
                                             
                                             <td>  
-                                                <form id="deleteUser" action="/allowAccess/<%= user._id %>?_method=DELETE" method="POST" id="deleteUser">
-                                                <button name="deleteUser" type="submit" class="btnDeleteUser">Delete</button>
+                                                <form id="deleteUserAcces" action="/allowAccess/<%= userAccess._id %>?_method=DELETE" method="POST">
+                                                <button name="deleteUser" type="submit" class="btnDeleteUser">Remove User Access</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -37,23 +37,27 @@
                 </table>
             </div>
         
-        
-        
-        
-        
             
                 <div class="col s3 offset-s3">
                   <!-- search -->
+                  
                   <div class="input-field">
+                    
                     <input id="search" type="search" name="name" placeholder="search name" value="<%= name %>" autocomplete="off">
-                  </div>
+                
                 </div>
+                </div>
+                <h2>All Users </h2>
                 <table class="table table-hover">
                         <thead>
                             <th>Name</th>
                             <th>Add Permission</th>
                         </thead>
                         <tbody>
+                    
+                      
+            
+                      
                         <% users.forEach(function(user2){ %>
                             
                             <% if (user.allowAccess.indexOf(user2._id) < 0) {%>
@@ -69,7 +73,7 @@
                         <% }) %>
                         </tbody>
                     </table>
-
+                
 
 
 </div>   
