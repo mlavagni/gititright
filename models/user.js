@@ -5,9 +5,11 @@ const Schema = mongoose.Schema
 let articleSchema = new Schema({
     name: {
         type: String,
+        required: true
     },
     size: {
         type: String,
+        required: true
     },
     description: {
         type: String,

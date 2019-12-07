@@ -49,6 +49,8 @@ sizeClick.forEach(function (size){
 		const sdescriptionEl = document.getElementById("descriptionSize");
 		sdescriptionEl.value = size.children[3].textContent
 
+		const sizeBtn = document.getElementById("btnArticle");
+		sizeBtn.innerHTML = "Update"
 		//change the form action to PUT
 		document.getElementById("form-save-update").action =`/sizes/${ size.attributes.value.value }?_method=PUT`;
 

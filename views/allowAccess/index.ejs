@@ -2,49 +2,52 @@
 
 <div class="content">
 
-        <%- include('../partials/left') %>
-        <div class="info">
-        <div class="tableInfo">
-                <h2>Allowed Users </h2>
-                <table class="table table-hover">
-                    <thead>
-                        <th>Name</th>
-                        
-                        <th>Delete</th>
-                    </thead>
-                    <tbody>
-                     
-                        <% users.forEach(function(userAccess){ %>
-                            <% if (user.allowAccess.length > 0) { %>
-                                <% user.allowAccess.forEach(function(aAccess){ %>
-                                    <% if (aAccess == userAccess._id) { %>
+    <%- include('../partials/left') %>
+    <div class="info">
+    <div class="tableInfo">
+        <h2>Allowed Users </h2>
+        <table class="table table-hover">
+            <thead>
+                <th>Name</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+                
+                <% users.forEach(function(userAccess){ %>
+                    <% if (user.allowAccess.length > 0) { %>
+                        <% user.allowAccess.forEach(function(aAccess){ %>
+                            <% if (aAccess == userAccess._id) { %>
 
-                                        <tr class="sizeRow" value="<%= userAccess._id %>">
-                                            <td><%= userAccess.name %></td>
-                                            
-                                            <td>  
-                                                <form id="deleteUserAcces" action="/allowAccess/<%= userAccess._id %>?_method=DELETE" method="POST">
-                                                <button name="deleteUser" type="submit" class="btnDeleteUser">Remove User Access</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    <% } %>
-                   
-                                <%}) %>
+                                <tr class="sizeRow" value="<%= userAccess._id %>">
+                                    <td><%= userAccess.name %></td>
+                                    
+                                    <td>  
+                                        <form id="deleteUserAcces" action="/allowAccess/<%= userAccess._id %>?_method=DELETE" method="POST">
+                                        <button name="deleteUser" type="submit" class="btnDeleteUser">Remove User Access</button>
+                                        </form>
+                                    </td>
+                                </tr>
                             <% } %>
-                        <% }) %>
-                    </tbody>
-                </table>
-            </div>
+            
+                        <%}) %>
+                    <% } %>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
         
             
                 <div class="col s3 offset-s3">
                   <!-- search -->
                   
                   <div class="input-field">
-                    
+                      <form >
+                      <input type="text" id= searchName> <button>Search by Name</button>
+                      <% let res = users.filter(it => new RegExp(searchName.value, "i").test(it.name))%>
+                    </form>
+                    <div id="search-div">
                     <input id="search" type="search" name="name" placeholder="search name" value="<%= name %>" autocomplete="off">
-                
+                  </div>
                 </div>
                 </div>
                 <h2>All Users </h2>
@@ -54,9 +57,8 @@
                             <th>Add Permission</th>
                         </thead>
                         <tbody>
-                    
-                      
-            
+                        
+                        
                       
                         <% users.forEach(function(user2){ %>
                             

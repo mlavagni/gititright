@@ -230,7 +230,7 @@ form-group{
   grid-row: 2/3;
 }
 
-#bt2{
+  #btnArticle{
   /* margin: 15px; */
   margin: 0 15px 15px 15px;
   grid-column: 4/5;
@@ -258,4 +258,8 @@ margin-top: 40px;
   width: 700px;
   text-align: center;
   margin: 0 auto;
+}
+
+#search-div{
+  visibility: hidden;
 }
