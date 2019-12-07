@@ -9,6 +9,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url(../images/background-pages.png);
   background-size: cover; 
+  /* background-attachment: fixed */
  
 }
 

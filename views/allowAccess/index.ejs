@@ -15,12 +15,13 @@
                     <tbody>
                      
                         <% users.forEach(function(userAccess){ %>
-                  
-                            <% if (user.allowAccess.lenght > 0) { %>
+                            <% if (user.allowAccess.length > 0) { %>
                                 <% user.allowAccess.forEach(function(aAccess){ %>
                                     <% if (aAccess == userAccess._id) { %>
-                                        <tr class="sizeRow" value="<%= user._id %>">
+
+                                        <tr class="sizeRow" value="<%= userAccess._id %>">
                                             <td><%= userAccess.name %></td>
+                                            
                                             <td>  
                                                 <form id="deleteUser" action="/allowAccess/<%= user._id %>?_method=DELETE" method="POST" id="deleteUser">
                                                 <button name="deleteUser" type="submit" class="btnDeleteUser">Delete</button>
@@ -50,18 +51,21 @@
                 <table class="table table-hover">
                         <thead>
                             <th>Name</th>
-                            <th>Add Permition</th>
+                            <th>Add Permission</th>
                         </thead>
                         <tbody>
-                        <% users.forEach(function(user){ %>
+                        <% users.forEach(function(user2){ %>
+                            
+                            <% if (user.allowAccess.indexOf(user2._id) < 0) {%>
                         <tr class="userRow" value="<%= user._id %>">
-                            <td><%= user.name %> <%= user.lastName %> </td>
+                            <td><%= user2.name %> <%= user2.lastName %> </td>
                             <td>  
-                            <form id="allowAccess" action="/users/<%= user._id %>/allowAccess" method="POST" id="allowAccess">
+                            <form id="allowAccess" action="/users/<%= user2._id %>/allowAccess" method="POST" id="allowAccess">
                                 <button name="allowAccess" type="submit" class="btnAllowAccess">Allow Access</button>
                             </form>
                             </td>
                         </tr>
+                        <% } %>
                         <% }) %>
                         </tbody>
                     </table>
