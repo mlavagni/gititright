@@ -1,7 +1,8 @@
 var router = require('express').Router();
 var wishListsCtrl = require('../controllers/wishLists');
 
-// GET / articles sizes
+router.use (isLoggedIn)
+
 router.get('/wishLists',wishListsCtrl.index);
 
 

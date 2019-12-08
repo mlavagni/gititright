@@ -41,10 +41,7 @@
                   <!-- search -->
                   
                   <div class="input-field">
-                      <form >
-                      <input type="text" id= searchName> <button>Search by Name</button>
-                      <% let res = users.filter(it => new RegExp(searchName.value, "i").test(it.name))%>
-                    </form>
+                  
                     <div id="search-div">
                     <input id="search" type="search" name="name" placeholder="search name" value="<%= name %>" autocomplete="off">
                   </div>

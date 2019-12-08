@@ -1,7 +1,10 @@
 var router = require('express').Router();
 var remindersCtrl = require('../controllers/reminders');
 
-// GET / reminders
+
+router.use (isLoggedIn)
+
+
 router.get('/reminders',remindersCtrl.index);
 router.post('/users/:id/reminders',remindersCtrl.create);
 router.delete('/reminders/:id',remindersCtrl.delete);
