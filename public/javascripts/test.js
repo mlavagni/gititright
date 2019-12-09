@@ -1,7 +1,7 @@
 
 const reminderClick = document.querySelectorAll(".reminderRow")
 const sizeClick = document.querySelectorAll(".sizeRow")
-
+let sizeBtn
 
 reminderClick.forEach(function (reminder){
 	reminder.addEventListener('click', function(evt){
@@ -22,6 +22,9 @@ reminderClick.forEach(function (reminder){
 		
 		const daysEl = document.getElementById("daysTextBox");
 		daysEl.value = reminder.children[2].textContent
+
+		sizeBtn = document.getElementById("btnAdd");
+		sizeBtn.innerHTML = "Update"
 
 		//change the form action to PUT
 		document.getElementById("form-save-update").action =`/reminders/${ reminder.attributes.value.value }?_method=PUT`;
@@ -49,7 +52,7 @@ sizeClick.forEach(function (size){
 		const sdescriptionEl = document.getElementById("descriptionSize");
 		sdescriptionEl.value = size.children[3].textContent
 
-		const sizeBtn = document.getElementById("btnArticle");
+		sizeBtn = document.getElementById("btnAdd");
 		sizeBtn.innerHTML = "Update"
 		//change the form action to PUT
 		document.getElementById("form-save-update").action =`/sizes/${ size.attributes.value.value }?_method=PUT`;

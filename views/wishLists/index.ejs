@@ -1,4 +1,90 @@
 <%- include('../partials/top') %>
-<%- include('../partials/left') %>
 
-<h1>wish list</h1>
+<div class="content">
+    <%- include('../partials/left') %>
+
+    <div class="info">
+        <div class="tableInfo">
+            <h2>Wish List</h2>
+            <table class="table table-hover">
+                <thead>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>How much you want it</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    <% user.wishLists.forEach(function(whishList){ %>
+                        <tr class="whishListRow" value="<%= whishList._id %>">
+                            <td><%= whishList.name %></td>
+                            <td><%= whishList.quantity %></td>
+                            <td><%= whishList.rate %></td>
+                            <td>  
+                            <form id="deleteWishList" action="/whishLists/<%= whishList._id %>?_method=DELETE" method="POST" id="deleteWhishList">
+                            <button name="deleteWhishList" type="submit" class="btnTest">Delete</button>
+                            </form>
+                            </td>
+                        </tr> 
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div id='itemsContainer' class="wl-form-new-update">
+            
+            <form id="form-save-update"class="newSize" id="add-size-form" method="POST" action="/users/<%= user._id %>/wishLists">
+                <div id="test" class="txt-container-wl">
+                    <div class="div-wl-txt" id="div-wl-name-txt">
+                        <input type="text" name="name" class="tb-effects tb-wishlist" 
+                            id="tb-wl-name" placeholder="Article name" autocomplete="off" required>
+                        <input type="hidden" name="_id" class="form-control" id="idWishlist">
+                    </div>
+                    <div class="div-wl-txt" id ="div-wl-url-txt">
+                        <input type="text" name="url" class="tb-effects tb-wishlist" 
+                        id="tb-wl-url" placeholder="Article URL" autocomplete="off">
+                    </div>
+                    <div class="div-wl-txt" id ="div-wl-url-txt">
+                        <input type="text" name="shoppingCenter" class="tb-effects tb-wishlist" 
+                        id="tb-wl-shoppingCenter" placeholder="Shopping center" autocomplete="off">
+                        </div>
+                    <div class="div-wl-txt" id ="div-wl-quantity-txt">
+                        <input type="text" name="quantity" class="tb-effects tb-wishlist" 
+                        id="tb-wl-quantity" placeholder="Quantity">
+                    </div>
+                    <div id="rb-wishlist">
+                        <p>How much do you like it?</p>
+                        <input type="radio" id="one" name="rate" value="1"
+                                checked>
+                        <label for="one">1</label>
+                        
+                        <input type="radio" id="two" name="rate" value="2">
+                        <label for="two">2</label>
+                        
+                        <input type="radio" id="three" name="rate" value="3">
+                        <label for="three">3</label>
+                        
+
+                        <input type="radio" id="four" name="rate" value="4">
+                        <label for="four">4</label>
+                    
+                        <input type="radio" id="five" name="rate" value="5">
+                        <label for="five">5</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="btnAdd">Add Article</button>
+                    
+                </div>
+            </form> 
+
+        </div>
+
+
+
+    </div>
+        
+   
+
+   
+
+</div>

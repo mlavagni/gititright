@@ -37,7 +37,7 @@ let wishListSchema = new Schema({
         type:String
     },
     rate:{
-    type:Boolean
+    type:Number
     },
     isRecieved:{
         type:Boolean

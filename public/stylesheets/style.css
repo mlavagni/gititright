@@ -224,23 +224,23 @@ form-group{
   grid-row: 3/4;
   justify-content: flex-start;
 }
-#bt1{
+/* #bt1{
   margin: 0 15px 15px 15px;
   grid-column: 4/5;
   grid-row: 2/3;
-}
+} */
 
-  #btnArticle{
+  #btnAdd{
   /* margin: 15px; */
   margin: 0 15px 15px 15px;
   grid-column: 4/5;
   grid-row: 3/4;
 }
-#btn-size1{
+/* #btn-size1{
   margin: 30px;
   grid-column: 3/4;
   grid-row: 2/3;
-}
+} */
 
 #btn-size2{
   /* margin: 15px; */
@@ -249,9 +249,7 @@ form-group{
   grid-row: 2/3;
 }
 
-.profile-info{
-margin-top: 40px;
-}
+
 
 #home-logo{
   height: 700px;
@@ -263,3 +261,74 @@ margin-top: 40px;
 #search-div{
   visibility: hidden;
 }
+
+
+/* tabs */
+@import "//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css";
+
+.tab:not(:target) {
+  display: none;
+}
+
+.tab:last-child {
+  display: block;
+}
+
+.tab:target ~ .tab:last-child {
+  display: none;
+}
+
+.tabs {
+  width: 30em;
+  margin: 6.5em auto;
+}
+
+
+/* Start Wish List */
+/* ************************************* */
+#tb-wl-quantity{
+  width: 4rem;
+}
+.tb-effects{
+  height: 2rem;
+  width: 9rem;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  margin-right: 0.5rem;
+  margin-top: 2rem;
+}
+
+.txt-container-wl{
+  justify-items: flex-start
+}
+
+#rb-wishlist{
+  margin-top: 1rem;
+}
+
+/* End Wish List */
+/* ************************************* */
+
+/* Profile */
+
+.profile-info{
+  margin-top: 40px;
+  width: 100%;
+  }
+
+  #updateUser{
+    text-align: -webkit-center;
+    margin: 0;
+  }
+
+  #tb-user-name{
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+  #tb-user-lastName{
+    margin-bottom: 20px;
+  }
+
+  /* End Profile info */
+/* ************************************* */

@@ -4,32 +4,28 @@
 
 
 
-<div class="content">
-        <%- include('../partials/left') %>
+        <div class="content">
+                <%- include('../partials/left') %>
 
-        <div class="tableInfo profile-info">
-                <h1>Profile Info</h1>
-        <form id="updateUser" action="/users/<%= user._id %>?_method=PUT" method="POST" id="updateUser">    
-        <div class="form-group">
-            <label for="formGroupExampleInput">Name</label>
-            <input type="text" name="name" class="form-control" id="formGroupExampleInput" value="<%=user.name%>">
+                <div class="tableInfo profile-info">
+                        <h1>Profile Info</h1>
+                        <form id="updateUser" action="/users/<%= user._id %>?_method=PUT" method="POST" id="updateUser">    
+                                <div class="div-user-txt">
+                                        <label for="tb-user-name">Name</label>
+                                        <input type="text" name="name" class="tb-effects tb-user" id="tb-user-name" 
+                                        value="<%=user.name%>">
+                                </div>
+                                <div class="div-user-txt">
+                                        <label for="tb-user-lastName">Last Name</label>
+                                        <input type="text" name="lastName" class="tb-effects tb-user" id="tb-user-lastName" 
+                                        value="<%=user.lastName%>">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Update Profile</button>
+                        </form> 
+                </div>
         </div>
-        <div class="form-group">
-                <label for="formGroupExampleInput">Last Name</label>
-                <input type="text" name="lastName" class="form-control" id="formGroupExampleInput" value="<%=user.lastName%>">
-        </div>
-       
-        <button type="submit" class="btn btn-primary">Update Profile</button>
-    </form> 
-    </div>
-</div>
 
 </body>
 
-
-
-
-
-
-</body>
 </html>

@@ -55,7 +55,9 @@
                         </thead>
                         <tbody>
                         
-                        
+                            <form >	
+                                <input type="text" id= searchName> <button>Search by Name</button>	
+                                <% let res = users.filter(it => new RegExp("searchName.value", "i").test(it.name))%>
                       
                         <% users.forEach(function(user2){ %>
                             
