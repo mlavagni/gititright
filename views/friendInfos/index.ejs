@@ -1,0 +1,58 @@
+<%- include('../partials/top') %>
+
+<div class="content">
+
+    <%- include('../partials/left') %>
+    <div class="info">
+    <div class="tableInfo">
+        <h2>Friends Information </h2>
+        <table class="table table-hover">
+            <thead>
+                <th>Name</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+                
+                <% users.forEach(function(userAccess){ %>
+                    <% if (user.allowAccess.length > 0) { %>
+                        <% user.allowAccess.forEach(function(aAccess){ %>
+                            <% if (aAccess == userAccess._id) { %>
+
+                                <tr class="sizeRow" value="<%= userAccess._id %>">
+                                    <td><%= userAccess.name %></td>
+                                    
+                                    <td>  
+                                        <form id="deleteUserAcces" action="/friendInfos/<%= userAccess._id %>?_method=DELETE" method="POST">
+                                        <button name="deleteUser" type="submit" class="btnDeleteUser">View Information</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <% } %>
+            
+                        <%}) %>
+                    <% } %>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+        
+            
+                <div class="col s3 offset-s3">
+                  <!-- search -->
+                  
+                  <div class="input-field">
+                  
+                    <div id="search-div">
+                    <input id="search" type="search" name="name" placeholder="search name" value="<%= name %>" autocomplete="off">
+                  </div>
+                </div>
+                </div>
+               
+          
+                
+
+
+</div>   
+      </body>
+
+</html>

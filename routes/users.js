@@ -1,9 +1,10 @@
 var router = require('express').Router();
 var usersCtrl = require('../controllers/users');
 
-router.use (isLoggedIn)
+
 
 router.get('/users', usersCtrl.index);
+router.use (isLoggedIn)
 router.get('/users/show',usersCtrl.show);
 router.put('/users/:id',usersCtrl.update);
 

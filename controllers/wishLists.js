@@ -44,9 +44,10 @@ module.exports = {
 
 
 function deleteWishlistItem(req, res, next) {
+
     User.findById(req.user, function(err, user) {
         // Removing document from the embedded schema
-        user.wishList.id(req.params.id).remove();
+        user.wishLists.id(req.params.id).remove();
         user.save(function (err) {
             if (err) return next(err);
             res.redirect(`/wishLists`);
